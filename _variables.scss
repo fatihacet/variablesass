@@ -1,0 +1,100 @@
+// Variables for text colors
+$textColor: #333;
+$textColorDark: #191919;
+$textColorLight: #666;
+$textColorLigten: #999;
+
+// Variables for link colors
+$linkColor: #0EC3FC;
+$linkColorHover: #0BB4E1;
+
+// Variables for fonts
+$fontFamily: Helvetica, Arial, sans-serif;
+$fontSize: 12px;
+
+/** The great mixins */
+// rounded for creating border radius rules with one radius value.
+@mixin rounded($px) {
+  -webkit-border-radius: $px;
+     -moz-border-radius: $px;
+       -o-border-radius: $px;
+          border-radius: $px;
+}
+// radius for creating border radius rules with multiple radius values.
+@mixin radius($tl, $tr, $br, $bl) {
+  -webkit-border-radius: $tl $tr $br $bl;
+     -moz-border-radius: $tl $tr $br $bl;
+       -o-border-radius: $tl $tr $br $bl;
+          border-radius: $tl $tr $br $bl;
+}
+// topLeftRadius for creating top left border radiuses.
+@mixin topLeftRadius($px) {
+  border-radius: $px 0 0 0;
+  -moz-border-radius: $px 0 0 0;
+  -webkit-border-radius: $px 0 0 0;
+}
+// bottomLeftRadius for creating top right border radiuses.
+@mixin topRightRadius($px) {
+  border-radius: 0 $px 0 0;
+  -moz-border-radius: 0 $px 0 0;
+  -webkit-border-radius: 0 $px 0 0;
+}
+// bottomLeftRadius for creating bottom left border radiuses.
+@mixin bottomLeftRadius($px) {
+  border-radius: 0 0 0 $px;
+  -moz-border-radius: 0 0 0 $px;
+  -webkit-border-radius: 0 0 0 $px;
+}
+// bottomRightRadius for creating bottom right border radiuses.
+@mixin bottomRightRadius($px) {
+  border-radius: 0 0 $px 0;
+  -moz-border-radius: 0 0 $px 0;
+  -webkit-border-radius: 0 0 $px 0;
+}
+// bottomLeftRightRadius for creating bottom corner radiuses.
+@mixin bottomLeftRightRadius($l, $r) {
+  border-radius: 0 0 $l $r;
+  -moz-border-radius: 0 0 $l $r;
+  -webkit-border-radius: 0 0 $l $r;
+}
+// topLeftRightRadius for creating top corner radiuses.
+@mixin topLeftRightRadius($l, $r) {
+  border-radius: $l $r 0 0;
+  -moz-border-radius: $l $r 0 0;
+  -webkit-border-radius: $l $r 0 0;
+}
+// shadow for creating box shadow rules.
+@mixin shadow($a1, $a2, $a3) {
+  -webkit-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5);
+       -o-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5);
+          box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5);
+}
+// insetShadow for creating inset box shadow rules.
+@mixin insetShadow($a1, $a2, $a3) {
+  -webkit-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5) inset;
+     -moz-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5) inset;
+       -o-box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5) inset;
+          box-shadow: $a1 $a2 $a3 rgba(0, 0, 0, 0.5) inset;
+}
+// gradient for creating gradient rules for various browsers.
+@mixin gradient($startColor, $endColor) {
+  background: $endColor; /* Old browsers */
+  background: -moz-linear-gradient(top, $startColor 0%, $endColor 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $startColor), color-stop(100%, $endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $startColor 0%, $endColor 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $startColor 0%, $endColor 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $startColor 0%, $endColor 100%); /* IE10+ */
+  background: linear-gradient(top, $startColor 0%, $endColor 100%); /* W3C */
+}
+// breakWord for adding cross browser word wrap rules.
+@mixin breakWord {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap  : break-word;
+}
