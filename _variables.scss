@@ -12,7 +12,7 @@ $linkColorHover: #0BB4E1;
 $fontFamily: Helvetica, Arial, sans-serif;
 $fontSize: 12px;
 
-/** The great mixins */
+// The great mixins
 // rounded for creating border radius rules with one radius value.
 @mixin rounded($px) {
   -webkit-border-radius: $px;
